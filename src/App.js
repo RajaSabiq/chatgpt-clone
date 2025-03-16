@@ -1,25 +1,15 @@
-import logo from './logo.svg';
+import { Router } from 'react-router-dom';
 import './App.css';
+import Typewriter from './components/Typewriter';
+import { createBrowserRouter, RouterProvider } from 'react-router';
+import { useState } from 'react';
+import auth from './routes/auth';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [isLogin, setIsLogin] = useState(false);
+  const router = createBrowserRouter([...auth()]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

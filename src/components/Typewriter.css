@@ -1,0 +1,23 @@
+.typewriter {
+  display: inline-block !important;
+  margin: auto 0px;
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  animation: blink 0.75s step-end infinite;
+  border-right: 4px solid white;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    border-color: transparent;
+  }
+  50%,
+  100% {
+    border-color: white;
+  }
+}
