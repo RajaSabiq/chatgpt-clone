@@ -1,8 +1,10 @@
 import React from 'react';
 import './Login.css';
 import { login } from '../../services/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className='container'>
       <div className='login-box'>
@@ -12,7 +14,7 @@ const Login = () => {
             e.preventDefault();
             const email = e.target['email']['value'];
             const password = e.target['password']['value'];
-            login(email, password);
+            login(email, password, navigate);
           }}
         >
           <input
@@ -34,7 +36,15 @@ const Login = () => {
           <button className='btn'>Continue</button>
         </form>
         <p className='signup-text'>
-          Don’t have an account? <span className='signup-link'>Sign Up</span>
+          Don’t have an account?{' '}
+          <span
+            onClick={() => {
+              navigate('/sign-up');
+            }}
+            className='signup-link'
+          >
+            Sign Up
+          </span>
         </p>
 
         <div className='divider'>

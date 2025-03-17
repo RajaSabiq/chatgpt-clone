@@ -4,10 +4,12 @@ import Typewriter from './components/Typewriter';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import { useState } from 'react';
 import auth from './routes/auth';
+import chat from './routes/chat';
 
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
-  const router = createBrowserRouter([...auth()]);
+  const router = createBrowserRouter([...chat(), ...auth()]);
+
+  console.log(router);
 
   return <RouterProvider router={router} />;
 }

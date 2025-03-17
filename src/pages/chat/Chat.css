@@ -1,0 +1,78 @@
+.chatContainer {
+  background-color: #212121;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.chatNav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.chatNav > .left {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.chatNav > button {
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  color: black;
+  background-color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.content {
+  padding: 0px 40px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  align-items: center;
+}
+.content > .textField {
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #303030;
+}
+.content > .textField > input {
+  width: 100%;
+  border: none;
+  color: white;
+  font-weight: 600;
+  outline: none;
+  background-color: transparent;
+}
+
+.chatContainer > footer {
+  align-self: center;
+}
+
+.chatMessages {
+  flex: 1;
+  width: 60%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.chatMessages > .userMessage {
+  padding: 5px 30px;
+  border-radius: 5px;
+  background-color: #303030;
+  width: fit-content;
+  align-self: flex-end;
+  max-width: 80%;
+}
