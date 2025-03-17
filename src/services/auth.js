@@ -5,7 +5,7 @@ import {
 import { auth } from '../firebase.js';
 
 const createUser = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password)
+  return createUserWithEmailAndPassword(auth, email, password)
     .then((res) => {
       alert('Successfully User created');
     })
@@ -14,10 +14,11 @@ const createUser = (email, password) => {
     })
     .finally(() => {});
 };
-const login = (email, password) => {
+const login = (email, password, navigate) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((res) => {
       alert('Successfully User Login');
+      navigate('/chat');
     })
     .catch((err) => {
       alert(err['message']);
